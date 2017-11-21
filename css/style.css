@@ -1,0 +1,464 @@
+/*
+	Проект: United Solutions
+	Создатель: Рекламное агентство “Hello, Brand!” - http://hello-brand.ru/
+	Дата: 19.09.2014
+	Версия: 1.0
+*/
+
+/**************** RESET *****************************/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, img, ol, ul, li,
+form, input, button, textarea, label, fieldset, legend, blockquote,
+table, caption, tbody, tfoot, thead, tr, th, td, sub, sup, object, iframe  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+* {box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+*:focus{outline: 0;}
+b,strong{font-weight: 700;}
+i,em{font-style: italic;}
+ul {list-style: disc;}
+ol {list-style: decimal;}
+table {border-spacing: 0; border-collapse: collapse;}
+td, th {text-align: center; vertical-align: middle;}
+a, [type="submit"], [type="button"], label, select {cursor: pointer;}
+a {color: inherit; text-decoration: none;}
+textarea {resize: none; overflow: auto;}
+sup {vertical-align: super;}
+sub {vertical-align: sub;}
+aside, header, footer, article, section, nav {display: block; margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{color:#000;}
+input::-moz-placeholder, textarea::-moz-placeholder{color:#000;}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {color:#000;}
+input.placeholder, textarea.placeholder{color:#000;}
+	input.error::-webkit-input-placeholder, textarea.error::-webkit-input-placeholder{color:#f00;}
+	input.error::-moz-placeholder, textarea.error::-moz-placeholder{color:#f00;}
+	input.error::-ms-input-placeholder, textarea.error::-ms-input-placeholder {color:#f00;}
+	input.error.placeholder, textarea.error.placeholder{color:#f00;}
+	input.error {color: #f00; border-color: #f00;}
+	
+
+/**************** FONTS *****************/
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('../fonts/HarmoniaSansProCyr-Regular.eot');
+    src: url('../fonts/HarmoniaSansProCyr-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HarmoniaSansProCyr-Regular.woff') format('woff'),
+         url('../fonts/HarmoniaSansProCyr-Regular.ttf') format('truetype'),
+         url('../fonts/HarmoniaSansProCyr-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('../fonts/HarmoniaSansProCyr-Italic.eot');
+    src: url('../fonts/HarmoniaSansProCyr-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HarmoniaSansProCyr-Italic.woff') format('woff'),
+         url('../fonts/HarmoniaSansProCyr-Italic.ttf') format('truetype'),
+         url('../fonts/HarmoniaSansProCyr-Italic.svg') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('../fonts/HarmoniaSansProCyr-Light.eot');
+    src: url('../fonts/HarmoniaSansProCyr-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HarmoniaSansProCyr-Light.woff') format('woff'),
+         url('../fonts/HarmoniaSansProCyr-Light.ttf') format('truetype'),
+         url('../fonts/HarmoniaSansProCyr-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('../fonts/HarmoniaSansProCyr-SemiBd.eot');
+    src: url('../fonts/HarmoniaSansProCyr-SemiBd.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HarmoniaSansProCyr-SemiBd.woff') format('woff'),
+         url('../fonts/HarmoniaSansProCyr-SemiBd.ttf') format('truetype'),
+         url('../fonts/HarmoniaSansProCyr-SemiBd.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('../fonts/HarmoniaSansProCyr-Bold.eot');
+    src: url('../fonts/HarmoniaSansProCyr-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HarmoniaSansProCyr-Bold.woff') format('woff'),
+         url('../fonts/HarmoniaSansProCyr-Bold.ttf') format('truetype'),
+         url('../fonts/HarmoniaSansProCyr-Bold.svg') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('../fonts/HarmoniaSansProCyr-Black.eot');
+    src: url('../fonts/HarmoniaSansProCyr-Black.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HarmoniaSansProCyr-Black.woff') format('woff'),
+         url('../fonts/HarmoniaSansProCyr-Black.ttf') format('truetype'),
+         url('../fonts/HarmoniaSansProCyr-Black.svg') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+/**************** ANIMATION *****************/
+
+	/* Pulse animation */
+	@-webkit-keyframes pulse {
+	  25% { -webkit-transform: scale(1.1); transform: scale(1.1);}
+	  75% {-webkit-transform: scale(0.9); transform: scale(0.9); }
+	}
+	@keyframes pulse {
+	  25% {-webkit-transform: scale(1.1); transform: scale(1.1);}
+	  75% {-webkit-transform: scale(0.9); transform: scale(0.9);}
+	}
+	.pulse {display: inline-block; -webkit-transform: translateZ(0); transform: translateZ(0); box-shadow: 0 0 1px rgba(0, 0, 0, 0);}
+	.pulse:hover, .pulse:focus, .pulse:active {
+	  -webkit-animation: pulse 1s linear infinite;
+	  animation: pulse 1s linear infinite;
+	}
+	
+
+/**************** GLOBAL *****************/
+
+html {background: #fff; color: #000; font: 18px/22px Harmonia;}
+html, body {min-width: 1200px;}
+	#global_wrapper {overflow:hidden; position:relative;}
+		.wrapper {margin: 0 auto; position: relative; width: 1100px; height: 100%;}
+
+.non-scroll {overflow: hidden !important;}
+.clear {clear: both;}
+.cell {display: table-cell; height: 100%; vertical-align: middle;}
+.icon {display: block; position: relative; background: url(../images/icons.png) -9999px 0 no-repeat;}
+.logo {display: block; background: url(../images/logo.png) no-repeat;}
+
+	/*------ Headers  ------*/
+	h1, h2, h3, h4, h5, h6 {text-align: center;}
+	h1 {font: 300 86px/88px Harmonia; color: #fff; text-transform: uppercase; margin: 100px auto 60px;}
+		h1 span {position: relative;}
+		h1 span:after {content:''; display: block; width: 100%; height: 1px; background: #fff; position: absolute; left: 0; bottom: -5px;}
+			h1 span b {font: 700 46px/48px Harmonia; color: #97ce5c; position: absolute; top: -40px; right: 0;}
+	h2 {font: 300 72px/74px Harmonia; color: #5d3c8a; text-transform: uppercase; margin-bottom: 78px;}
+	h2 span {position: relative;}
+		h2 b {font-weight: 600;}
+			h2 span:after {content:''; display: block; width: 100%; height: 1px; background: #97ce5c; position: absolute; left: 0; bottom: 0;}
+	h3 {}
+	h4 {font: 600 30px/30px Harmonia; color: #5d3c8a; text-transform: uppercase; text-align: left;}
+		h4 span {position: relative;}
+			h4 span:after {content:''; display: block; width: 100%; height: 1px; background: #97ce5c; position: absolute; left: 0; bottom: -10px;}
+	
+	/*------ Buttons  ------*/
+	.button {display: block;}
+		.button:hover {}
+		.button:active {}
+		
+	.next_block {display: block; width: 68px; height: 68px; background: url(../images/icons.png) -20px 0 no-repeat; margin: auto; position: absolute; left: 0; right: 0; bottom: -28px; z-index: 4;}
+		.next_block:hover {background-position: -97px 0;}
+
+	/*------ Forms  ------*/
+	form {width: 788px; margin: auto; border: 1px solid #fff; padding: 24px 18px 26px 9px; color: #fff;}
+		form ul {width: 386px; float: left; padding-top: 50px;}
+			form ul li {list-style: none; font: 600 20px/24px Harmonia; padding-left: 48px; position: relative; margin-bottom: 20px;}
+			form ul li:before {content:''; display: block; width: 37px; height: 37px; background: url(../images/icons.png) -9999px 0 no-repeat; margin: auto; position: absolute; top: 0; bottom: 0; left: 0;}
+			form ul li:hover:before {
+				-webkit-transition:all 0.3s ease-out 0;
+				-moz-transition:all 0.3s ease-out 0;
+				-o-transition:all 0.3s ease-out 0;
+				transition:all 0.3s ease-out 0;
+				-moz-transform:rotate(360deg);
+				-o-transform:rotate(360deg);
+				-webkit-transform:rotate(360deg);
+				transform:rotate(360deg);
+			}
+				form ul li.item-1:before {background-position: -168px 0;}
+				form ul li.item-2:before {background-position: -207px 0;}
+				form ul li.item-3:before {background-position: -246px 0;}
+		input {-webkit-appearance: none;}
+		form .fields {width: 358px; float: right;}
+			form .fields p {font: 18px/22px Harmonia; margin-bottom: 15px;}
+			input[type="text"], input[type="email"], input[type="tel"], textarea[name="client_message"] {display: block; width: 100%; background: #fff url(../images/form_icons.png) -9999px 0 no-repeat; font: 18px/18px Harmonia; color: #000; padding: 14px 13px 10px 36px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 3px 0 #cacaca inset; position: relative; behavior:url(/PIE/PIE.php);}
+			input[name="client_name"] {background-position: 13px 15px;}
+				input[name="client_name"].error {background-position: 13px -190px;}
+			input[name="client_phone"] {background-position: 13px -53px;}
+				input[name="client_phone"].error {background-position: 13px -258px;}
+			input[name="client_mail"] {background-position: 13px -121px;}
+				input[name="client_mail"].error {background-position: 13px -326px;}
+				input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea[name="client_message"]:focus {box-shadow: none}
+			input[type="submit"] {width: 100%; height: 44px; background: #97ce5c; font: 600 18px/44px Harmonia; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px; position: relative; behavior:url(/PIE/PIE.php);}
+				input[type="submit"]:hover {background: #9b66ca;}
+				input[type="submit"]:active {border-top: 2px solid #503473;}
+	
+
+/**************** HEADER *****************/
+
+header {height: 870px; overflow: hidden; position: relative; background: #110b27 url(../images/video_pic.jpg);}
+header .overlay {height: 100%; background: rgba(27, 3, 58, 0.5); position: relative; z-index: 2;}
+		header .overlay .dots {height: 100%; background: url(../images/dots.png);}
+.video{width: 1980px; height: 1080px; margin: auto; position: absolute; left: 0px; right: 0; top: -150px; background: url(../images/video_pic.jpg) center 150px no-repeat; z-index: 1;}
+	#video {}
+header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0; top: 0; padding-top: 16px;}
+	header .name {font: 600 18px/22px Harmonia; color: #fff; text-transform: uppercase; float: left;}
+		header .name b {display: block; font: 28px/30px Harmonia; color: #97ce5c;}
+	header .phone {display: block; font: 700 30px/32px Harmonia; color: #fff; float: right;}
+		header .phone:hover {color: #ccc;}
+		header .phone:active {color: #f00;}
+	header .wrapper > [class*="item"] {display: table; width: 253px; height: 120px; color: #fff; text-align: center; text-transform: uppercase; padding: 13px 0; border: 1px solid #fff; float: left; margin: 0 0 13px 13px; position: relative;}
+	header .wrapper > .item-1 {margin-left: 155px;}
+		header .wrapper > [class*="item"] b {display: block; font: 900 30px/32px Harmonia; color: #97ce5c;}
+		header .wrapper > [class*="item"] .note {font-weight: 600; position: absolute; top: -35px; padding-left: 28px;}
+		header .wrapper > .item-1 .note {left: 0;}
+		header .wrapper > .item-2 .note {left: 16px;}
+		header .wrapper > .item-3 .note {left: 38px;}
+			header .wrapper > [class*="item"] .note:before {content:''; display: block; width: 16px; height: 16px; background: url(../images/icons.png) 0 -20px no-repeat; position: absolute; top: 2px; left: 0;}
+			header .wrapper > [class*="item"] .note:hover:before {
+				-webkit-transition:all 0.3s ease-out 0;
+				-moz-transition:all 0.3s ease-out 0;
+				-o-transition:all 0.3s ease-out 0;
+				transition:all 0.3s ease-out 0;
+				-moz-transform:rotate(360deg);
+				-o-transform:rotate(360deg);
+				-webkit-transform:rotate(360deg);
+				transform:rotate(360deg)
+			}
+		
+
+/**************** SERVICES *****************/
+
+#services {background: url(../images/services_bg.png) center top no-repeat; margin-top: -86px; position: relative; z-index: 4;}
+#services:before, #services:after {content:''; display: block; width: 3000px; height: 70px; background: #fff; margin: auto; position: absolute; left: 0; right: 0; top: 22px;}
+#services:before {left: -5000px;}
+#services:after {right: -5000px;}
+#services .wrapper {padding: 145px 115px 100px;}
+	/*------ Items ------*/
+	#services [class*="item"] {display: table; width: 217px; height: 217px; float: left; color: #fff; position: relative; cursor: pointer;}
+	#services .item-1 {background: url(../images/services-1.jpg) no-repeat;}
+	#services .item-2 {background: url(../images/services-2.jpg) no-repeat;}
+	#services .item-3 {background: url(../images/services-3.jpg) no-repeat;}
+	#services .item-4 {background: url(../images/services-4.jpg) no-repeat;}
+	#services .item-5 {background: url(../images/services-5.jpg) no-repeat;}
+	#services .item-6 {background: url(../images/services-6.jpg) no-repeat;}
+	#services .item-7 {background: url(../images/services-7.jpg) no-repeat;}
+	#services .item-8 {background: url(../images/services-8.jpg) no-repeat;}
+	#services [class*="item"]:hover .cell {
+		background: #97ce5c;
+		-webkit-transition:all 0.3s ease-out 0;
+		-moz-transition:all 0.3s ease-out 0;
+		-o-transition:all 0.3s ease-out 0;
+		transition:all 0.3s ease-out 0;
+	}
+		#services [class*="item"] b {display: block; text-align: center;}
+			#services  .item-1 b {font: 300 34px/38px Harmonia;}
+			#services  .item-2 b {font: 600 64px/38px Harmonia; text-transform: uppercase;}
+			#services  .item-3 b {font: 300 34px/38px Harmonia; text-transform: uppercase;}
+			#services  .item-4 b {font: 900 100px/38px Harmonia; text-transform: uppercase;}
+			#services  .item-5 b {font: 600 34px/38px Harmonia; text-transform: uppercase;}
+			#services  .item-6 b {font: 22px/26px Harmonia; text-transform: uppercase;}
+			#services  .item-7 b {font: 700 22px/28px Harmonia;}
+			#services  .item-8 b {font: 600 22px/28px Harmonia;}
+		#services [class*="item"] .cell > a {font: 600 16px/20px Harmonia; position: absolute; bottom: 10px; right: 12px; border-bottom: 1px solid transparent;}
+			#services [class*="item"] .cell > a:hover {border-bottom: 1px dotted #fff;}
+	/*------ More ------*/
+	#services [class*="more"] {display: none; padding: 30px 14px; border: 2px solid #97ce5d; margin: 8px auto; color: #5d3c8a; position: relative;}
+	#services [class*="more"]:before {content:''; display: block; width: 0; height: 0; border: 8px solid transparent; border-top: none; border-bottom: 8px solid #97ce5d; margin: auto; position: absolute; top: -8px;}
+	#services .more-1:before, #services .more-5:before {left: 109px;}
+	#services .more-2:before, #services .more-6:before {left: 327px;}
+	#services .more-3:before, #services .more-7:before {left: 545px;}
+	#services .more-4:before, #services .more-8:before {left: 763px;}
+		#services [class*="more"] .close {display: block; width: 14px; height: 16px; background: url(../images/icons.png) -168px -39px no-repeat; position: absolute; top: 14px; right: 14px;}
+		#services [class*="more"] .close:hover {background-position: -184px -39px;}
+			#services [class*="more"] h4 a:hover {border-bottom: 2px dotted #5d3c8a;}
+		#services [class*="more"] p {font: 600 18px/22px Harmonia; margin-top: 12px;}
+		#services [class*="more"] ul {margin: 18px 0 0 0; float: left;}
+		#services [class*="more"] ul.list-1 {margin-right: 45px;}
+			#services [class*="more"] ul li {font: 700 18px/22px Harmonia; text-transform: uppercase; list-style: none; margin-bottom: 10px;}
+			#services [class*="more"] ul li:before {content:'- ';}
+				#services [class*="more"] ul li a {border-bottom: 2px dotted transparent;}
+					#services [class*="more"] ul li a:hover {color: #97ce5c; border-bottom-color: #97ce5c;}
+				#services [class*="more"] ul li .icon {display: inline-block; width: 18px; height: 18px; background-position: 0 0; margin-left: 7px; top: 3px; cursor: pointer;}
+					#services [class*="more"] ul li .icon .note {display: none; width: 250px; background: #fff; border: 2px solid #97ce5d; position: absolute; top: -10px; right: -260px; font: 16px/20px Harmonia; text-transform: none; padding: 5px 8px; z-index: 5;}
+					#services [class*="more"] ul li:hover .icon .note {display: block;}
+						#services [class*="more"] ul li .icon .note:before {content:''; display: block; width: 0; height: 0; border: 7px solid transparent; border-left: none; border-right: 7px solid #97ce5d; position: absolute; top: 10px; left: -7px;}
+
+
+/**************** HOW *****************/
+
+#how {height: 1064px; background: url(../images/how_bg.jpg) center top repeat-y fixed; margin-top: -41px; position: relative;}
+#how:before, #how:after {content:''; display: block; width: 2000px; margin: auto; position: absolute; left: 0; right: 0;}
+#how:before {background: url(../images/how_top_mask.png) center top no-repeat; height: 61px; top: 0;}
+#how:after {background: url(../images/how_bottom_mask.png) center top no-repeat; height: 89px; bottom: 0;}
+#how .wrapper {padding: 120px 0 0;}
+	#how h2 {color: #fff;}
+		#how h2 span:after {background: #fff;}
+	#how [class*="item"] {width: 96px; height: 95px; margin: auto; position: relative;}
+	#how .item-1 {background-position: 0 -70px;}
+	#how .item-2 {background-position: -97px -70px;}
+	#how .item-3 {background-position: -194px -70px;}
+	#how .item-4 {background-position: -291px -70px;}
+		#how [class*="item"] b {display: table; width: 380px; height: 95px; font: 600 24px/26px Harmonia; color: #fff; text-align: right; position: absolute; left: -400px;}
+		#how [class*="item"] .right {font: 600 18px/22px Harmonia; color: #97ce5c; position: absolute; left: 120px; width: 290px;}
+		#how .item-1 .right {top: 25px;}
+		#how .item-2 .right {top: 5px;}
+		#how .item-3 .right {top: 0;}
+		#how .item-4 .right {top: 15px;}
+			#how [class*="item"] .right ul {}
+				#how [class*="item"] .right ul li {list-style: none; color: #fff; padding-left: 15px; position: relative;}
+				#how [class*="item"] .right ul li:before {content:'- '; color: #fff; display: block; position: absolute; left: 0; top: 0;}
+					#how [class*="item"] .right ul li a {}
+						#how [class*="item"] .right ul li a:hover {color: #ccc;}
+						#how [class*="item"] .right ul li a:active {color: #f00;}
+					#how [class*="item"] .right ul li .modal_callback, #how [class*="item"] .right ul li .modal_callback:active {color: #97ce5c;}
+						#how [class*="item"] .right ul li .modal_callback:hover {border-bottom: 1px dotted #97ce5c; color: #97ce5c;}
+	#how .arrow {height: 34px; background: url(../images/arrow.png) center top no-repeat; margin: 14px 0;}
+	#how h4 {color: #fff; text-align: center;}
+
+
+/**************** EXAMPLES *****************/
+
+#examples {border-bottom: 1px solid #e5e5e5;}
+#examples .wrapper {padding: 75px 0 30px;}
+	#examples h2 {margin-bottom: 55px;}
+	#examples .hidden {display: none;}
+	#examples [class^="item"] {display: block; width: 358px; height: 244px; float: left; margin: 4px; position: relative;}
+	#examples .item-1 {background: url(../images/example-1.jpg) no-repeat;}
+	#examples .item-2 {background: url(../images/example-2.jpg) no-repeat;}
+	#examples .item-3 {background: url(../images/example-3.jpg) no-repeat;}
+	#examples .item-4 {background: url(../images/example-4.jpg) no-repeat;}
+	#examples .item-5 {background: url(../images/example-5.jpg) no-repeat;}
+	#examples .item-6 {background: url(../images/example-6.jpg) no-repeat;}
+	
+	#examples .item-7 {background: url(../images/example-1.jpg) no-repeat;}
+	#examples .item-8 {background: url(../images/example-2.jpg) no-repeat;}
+	#examples .item-9 {background: url(../images/example-3.jpg) no-repeat;}
+	#examples .item-10 {background: url(../images/example-4.jpg) no-repeat;}
+	#examples .item-11 {background: url(../images/example-5.jpg) no-repeat;}
+	#examples .item-12 {background: url(../images/example-6.jpg) no-repeat;}
+	
+		#examples [class^="item"] .overlay {display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+		#examples [class^="item"]:hover .overlay {
+			background: rgba(93, 60, 138, 0.75); cursor: pointer;
+			-webkit-transition:all 0.3s ease-out 0;
+			-moz-transition:all 0.3s ease-out 0;
+			-o-transition:all 0.3s ease-out 0;
+			transition:all 0.3s ease-out 0;
+		}
+			#examples [class*="item"] span {font: 24px/28px Harmonia; color: #fff; text-transform: uppercase; position: absolute; bottom: 8px; left: 8px;}
+			#examples [class*="item"] a.more_link {font: 600 12px/20px Harmonia; position: absolute; bottom: 10px; right: 12px; border-bottom: 1px solid transparent;}
+				#examples [class*="item"] a.more_link:hover {border-bottom: 1px dotted #fff;}
+	#examples a.more {display: block; width: 358px; height: 52px; margin: 25px auto; font: 600 18px/52px Harmonia; color: #5d3c8a; text-align: center; text-transform: uppercase; background: #fff; border: 2px solid #5d3c8a; border-radius: 6px; position: relative; behavior:url(/PIE/PIE.php);}
+		#examples a.more:hover {background: #5d3c8a; color: #fff;}
+		#examples a.more:active {top: 2px;}
+	/*------ More ------*/
+	#examples [class^="more-"] {display: none; width: 1087px; border: 2px solid #5d3c8a; margin: 10px auto; padding: 13px 13px 20px; color: #5d3c8a; position: relative;}
+	#examples [class^="more-"]:before {content:''; display: block; width: 0; height: 0; border: 8px solid transparent; border-top: none; border-bottom: 8px solid #5d3c8a; margin: auto; position: absolute; top: -8px;}
+	#examples .more-1:before, #examples .more-4:before, #examples .more-7:before, #examples .more-10:before {left: 174px;}
+	#examples .more-2:before, #examples .more-5:before, #examples .more-8:before, #examples .more-11:before {left: 530px;}
+	#examples .more-3:before, #examples .more-6:before, #examples .more-9:before, #examples .more-12:before {left: 900px;}
+		#examples [class^="more-"] .close {display: block; width: 14px; height: 16px; background: url(../images/icons.png) -168px -39px no-repeat; position: absolute; top: 14px; right: 14px;}
+			#examples [class^="more-"] .close:hover {background-position: -184px -39px;}
+		#examples [class^="more-"] .left_col {width: 725px; float: left;}
+			#examples [class^="more-"] .left_col h3 {font: 700 24px/28px Harmonia; text-align: left; text-transform: uppercase; position: relative; margin-bottom: 20px;}
+			#examples [class^="more-"] .left_col h3:after {content:''; display: block; width: 685px; height: 1px; background: #5d3c8a; position: absolute; left: 0; bottom: -10px;}
+				#examples [class^="more-"] .left_col h3 span {color: #97ce5c;}
+			#examples [class^="more-"] .left_col p {margin-bottom: 20px;}
+			#examples [class^="more-"] .left_col b {display: block; font-weight: 700;}
+			#examples [class^="more-"] .left_col ul {margin-bottom: 20px;}
+				#examples [class^="more-"] .left_col ul li {list-style: none; padding-left: 10px;}
+				#examples [class^="more-"] .left_col ul li:before {content:'- ';}
+			#examples [class^="more-"] .left_col p.strong {font: 24px/28px Harmonia;}
+				#examples [class^="more-"] .left_col p.strong b {display: inline; font: 700 24px/28px Harmonia; text-transform: uppercase;}
+				#examples [class^="more-"] .left_col p.strong b.green {color: #97ce5c; text-transform: none;}
+		#examples [class^="more-"] .right_col {width: 280px; float: right; padding-top: 45px; color: #5d3c8a; text-align: center;}
+			#examples [class^="more-"] .right_col img {display: block; width: 182px; height: 182px; border-radius: 50%; border: 2px solid #5d3c8a; margin: 0 auto 8px; position: relative; behavior:url(/PIE/PIE.php);}
+			#examples [class^="more-"] .right_col b {font-weight: 600; display: block;}
+
+
+/**************** CLIENTS *****************/
+
+#clients {}
+#clients .wrapper {padding: 50px 0 35px;}
+	#clients [class*="logo"] {display: block; background: url(../images/clients_logos.png) no-repeat; float: left;}
+	#clients .logo-1, #clients .logo-2, #clients .logo-3, #clients .logo-4, #clients .logo-5 {height: 45px; margin-bottom: 20px;}
+	#clients .logo-6, #clients .logo-7, #clients .logo-8, #clients .logo-9, #clients .logo-10, #clients .logo-11 {height: 143px;}
+	#clients .logo-12, #clients .logo-13, #clients .logo-14, #clients .logo-15, #clients .logo-16, #clients .logo-17 {height: 122px;}
+		
+		#clients .logo-1 {width: 234px; background-position: 0 0; margin-right: 26px;}
+		#clients .logo-2 {width: 200px; background-position: -264px 0; margin-right: 32px;}
+		#clients .logo-3 {width: 134px; background-position: -496px 0; margin-right: 36px;}
+		#clients .logo-4 {width: 203px; background-position: -669px 0; margin-right: 22px;}
+		#clients .logo-5 {width: 201px; background-position: -892px 0;}
+		
+		#clients .logo-6 {width: 238px; background-position: 0 -65px; margin-right: 13px;}
+		#clients .logo-7 {width: 100px; background-position: -251px -65px; margin-right: 40px;}
+		#clients .logo-8 {width: 181px; background-position: -393px -65px; margin-right: 42px;}
+		#clients .logo-9 {width: 124px; background-position: -616px -65px; margin-right: 26px;}
+		#clients .logo-10 {width: 108px; background-position: -766px -65px; margin-right: 28px;}
+		#clients .logo-11 {width: 183px; background-position: -910px -65px;}
+		
+		#clients .logo-12 {width: 205px; background-position: 0 -208px; margin-right: 30px;}
+		#clients .logo-13 {width: 148px; background-position: -238px -208px; margin-right: 26px;}
+		#clients .logo-14 {width: 131px; background-position: -408px -208px; margin-right: 35px;}
+		#clients .logo-15 {width: 130px; background-position: -574px -208px; margin-right: 34px;}
+		#clients .logo-16 {width: 205px; background-position: -740px -208px; margin-right: 25px;}
+		#clients .logo-17 {width: 119px; background-position: -974px -208px;}
+
+
+/**************** BOTTOM FORM *****************/
+
+#bottom_form {height: 721px; background: url(../images/bottom_form_bg.jpg) center bottom no-repeat; position: relative;}
+#bottom_form .wrapper {padding: 155px 0 0;}
+	footer {height: 144px; position: absolute; left: 0; bottom: -10px; color: #fff;}
+		footer b {display: inline-block; font: 600 24px/28px Harmonia; text-transform: uppercase; border-bottom: 1px solid #fff; margin-bottom: 6px;}
+		footer .phone {display: block; font-weight: 600;}
+			footer .phone:hover {color: #ccc;}
+			footer .phone:active {color: #f00;}
+		footer .modal_confidence {display: inline-block; font-style: italic; border-bottom: 1px dotted #fff;}
+			footer .modal_confidence:hover {border-bottom: none;}
+
+
+
+
+/**************** MODAL WINDOWS *****************/
+
+#overlay_modal {display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1000;}
+#modals {display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 1001; overflow: auto; -webkit-transform: translateZ(0px); -webkit-overflow-scrolling: touch;}
+[id^="modal_"], [id^="modal-"] {display: none; margin: auto; position: absolute; left: 0; right: 0; top: 50px; z-index: 1005;}
+	/*------ Close button ------*/
+	.modal_close {display: none; width: 20px; height: 20px; background: url(../images/close_modal.png) 0 0 no-repeat; position: absolute; top: -20px; right: -20px; z-index: 1010;}
+		.modal_close:hover {background-position: 0 -23px;}
+		.modal_close:active {background-position: 0 -46px;}
+	/*------ Callback ------*/
+	#modal_callback_form {width: 400px; height: 340px; padding: 3px; top: 0; bottom: 0; background: #fff; border-radius: 8px; behavior:url(/PIE/PIE.php);}
+	#modal_callback_form .wrap {height: 100%; border: 2px solid #5d3c8a; border-radius: 8px; position: relative; behavior:url(/PIE/PIE.php);}
+		#modal_callback_form form {width: 360px; margin: 20px auto;}
+			#modal_callback_form form p {color: #111; text-align: center; font-size: 24px; margin-bottom: 15px;}
+			#modal_callback_form form input {border: 1px solid #5d3c8a; box-shadow: none;}
+			#modal_callback_form form input[type="submit"] {border: none;}
+			#modal_callback_form input[type="submit"]:active {border-top: 2px solid #503473;}
+	/*------ Confidence ------*/
+	#modal_confidence {width: 700px; padding: 3px; background: #fff; border-radius: 8px; behavior:url(/PIE/PIE.php);}
+	#modal_confidence .wrap {height: 100%; border: 2px solid #5d3c8a; padding: 10px 40px; border-radius: 8px; position: relative; behavior:url(/PIE/PIE.php);}
+		#modal_confidence h2 {font: 700 34px/36px Harmonia; color: #000; margin-bottom: 20px;}
+		#modal_confidence ol {counter-reset: list;}
+			#modal_confidence ol li {list-style: none; font: 22px/24px Harmonia; position: relative; margin-bottom: 10px;}
+			#modal_confidence ol li:before {counter-increment: list; content: counter(list) ")"; position: absolute; left: -32px; top: 0;}
+				#modal_confidence ol li b {display: block; font-weight: 600; font-size: 24px;}
+	/*------ Success ------*/
+	#modal_success {width: 473px; height: 313px; padding: 3px; top: 0; bottom: 0; background: #fff; border-radius: 8px; behavior:url(/PIE/PIE.php);}
+	#modal_success .cell {border: 2px solid #5d3c8a; border-radius: 8px; position: relative; behavior:url(/PIE/PIE.php);}
+		#modal_success h3 {font: 600 48px/52px Harmonia; color: #5d3c8a; text-transform: uppercase; margin-bottom: 25px;}
+		#modal_success h4 {font: 600 24px/28px Harmonia; color: #111; text-align: center; margin-bottom: 25px;}
+			#modal_success h4 b {color: #5d3c8a;}
+		#modal_success p {font: 600 18px/22px Harmonia; color: #111; text-align: center;}
+			#modal_success p b {color: #5d3c8a; display: block;}

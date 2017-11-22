@@ -493,7 +493,9 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 	width: 100%;
     border-radius: 30%;
 }
-
+.social-block a{
+	
+}
 iframe{
 	width: 100%;
 	height: 400px;
@@ -527,13 +529,27 @@ iframe{
 	    height: 1158px;
 	}
 	header {
-	    height: 1020px;
+	    height: 1040px;
 	}
+	.caption2{
+		font-size: 45px;
+	}
+	#services .wrapper {
+    padding: 145px 5px 100px;
+}
+.caption3{
+	font-size: 50px;
+}
 }
 
 @media screen and (max-width: 620px){
-	
+header {
+	    height: 1180px;
+	}	
 header .phone{
 	font-size: 16px;
+}
+.caption2{
+	font-size: 32px !important;
 }
 }

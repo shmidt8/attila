@@ -217,7 +217,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 		header .name b {display: block; font: 28px/30px Harmonia; color: #97ce5c;}
 	header .phone {
 		display: inline-block;
-	    font: 700 23px/32px Harmonia;
+	    font: 700 34px/32px Harmonia;
 	    color: #fff;
 	    vertical-align: text-bottom;
 	}
@@ -486,14 +486,22 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 	width: 30%;
 }
 .judge p{
-	font-size: 18px;
-	
+	font-size: 30px;
+    color: #4b267f;
+    font-weight: 600;
+    padding: 0 0 15px 0;
 }
 .judge img{
 	width: 100%;
     border-radius: 30%;
 }
 .social-block a{
+	
+}
+.map{
+	width: 300px;
+	display: inline-block;
+	margin-left: 180px;
 	
 }
 iframe{
@@ -553,3 +561,4 @@ header .phone{
 	font-size: 32px !important;
 }
 }
+

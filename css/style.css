@@ -16,6 +16,7 @@ table, caption, tbody, tfoot, thead, tr, th, td, sub, sup, object, iframe  {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Play', sans-serif;
 }
 * {box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
 *:focus{outline: 0;}
@@ -27,7 +28,17 @@ table {border-spacing: 0; border-collapse: collapse;}
 td, th {text-align: center; vertical-align: middle;}
 a, [type="submit"], [type="button"], label, select {cursor: pointer;}
 a {color: inherit; text-decoration: none;}
-textarea {resize: none; overflow: auto;}
+textarea {resize: none; overflow: auto;
+    width: 100%;
+    background: #fff url(../images/form_icons.png) -9999px 0 no-repeat;
+    font: 18px/18px Harmonia;
+    color: #000;
+    padding: 14px 13px 10px 36px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 3px 0 #cacaca inset;
+    resize: none;
+    overflow: auto;}
 sup {vertical-align: super;}
 sub {vertical-align: sub;}
 aside, header, footer, article, section, nav {display: block; margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
@@ -140,24 +151,29 @@ html, body {min-width: 380px;}
 
 .non-scroll {overflow: hidden !important;}
 .clear {clear: both;}
-.cell {display: table-cell; height: 100%; vertical-align: middle;}
-.icon {display: block; position: relative; background: url(../images/icons.png) -9999px 0 no-repeat;}
+.cell {
+	display: table-cell; 
+	height: 100%; 
+	vertical-align: middle;
+	text-align: center !important;
+}
+.icon {display: block; position: relative;}
 .logo {display: block; background: url(../images/logo.png) no-repeat;}
 
 	/*------ Headers  ------*/
-	h1, h2, h3, h4, h5, h6 {text-align: center;}
+	 h2, h3, h4, h5, h6 {text-align: center;}
 	h1 {font: 300 86px/88px Harmonia; color: #fff; text-transform: uppercase; margin: 100px auto 60px;}
 		h1 span {position: relative;}
 		h1 span:after {content:''; display: block; width: 100%; height: 1px; background: #fff; position: absolute; left: 0; bottom: -5px;}
-			h1 span b {font: 700 46px/48px Harmonia; color: #97ce5c; position: absolute; top: -40px; right: 0;}
+			h1 span b {font: 700 46px/48px Harmonia; color: #fc0000; position: absolute; top: -40px; right: 0;}
 	h2 {font: 300 72px/74px Harmonia; color: #5d3c8a; text-transform: uppercase; margin-bottom: 78px;}
 	h2 span {position: relative;}
 		h2 b {font-weight: 600;}
-			h2 span:after {content:''; display: block; width: 100%; height: 1px; background: #97ce5c; position: absolute; left: 0; bottom: 0;}
+			h2 span:after {content:''; display: block; width: 100%; height: 1px; background: #fc0000; position: absolute; left: 0; bottom: 0;}
 	h3 {}
 	h4 {font: 600 30px/30px Harmonia; color: #5d3c8a; text-transform: uppercase; text-align: left;}
 		h4 span {position: relative;}
-			h4 span:after {content:''; display: block; width: 100%; height: 1px; background: #97ce5c; position: absolute; left: 0; bottom: -10px;}
+			h4 span:after {content:''; display: block; width: 100%; height: 1px; background: #fc0000; position: absolute; left: 0; bottom: -10px;}
 	
 	/*------ Buttons  ------*/
 	.button {display: block;}
@@ -187,7 +203,7 @@ html, body {min-width: 380px;}
 				form ul li.item-3:before {background-position: -246px 0;}
 		input {-webkit-appearance: none;}
 		form .fields {width: 358px; float: right;}
-			form .fields p {font: 18px/22px Harmonia; margin-bottom: 15px;}
+			form .fields p {font: 26px/22px Harmonia; margin-bottom: 15px;}
 			input[type="text"], input[type="email"], input[type="tel"], textarea[name="client_message"] {display: block; width: 100%; background: #fff url(../images/form_icons.png) -9999px 0 no-repeat; font: 18px/18px Harmonia; color: #000; padding: 14px 13px 10px 36px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 3px 0 #cacaca inset; position: relative; behavior:url(/PIE/PIE.php);}
 			input[name="client_name"] {background-position: 13px 15px;}
 			    input[type="file"]{
@@ -200,21 +216,23 @@ html, body {min-width: 380px;}
 			input[name="client_mail"] {background-position: 13px -121px;}
 				input[name="client_mail"].error {background-position: 13px -326px;}
 				input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea[name="client_message"]:focus {box-shadow: none}
-			input[type="submit"] {width: 100%; height: 44px; background: #97ce5c; font: 600 18px/44px Harmonia; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px; position: relative; behavior:url(/PIE/PIE.php);}
+			input[type="submit"] {width: 100%; height: 44px; background: #fc0000; font: 600 18px/44px Harmonia; color: #fff; text-align: center; text-transform: uppercase; border-radius: 6px; position: relative; behavior:url(/PIE/PIE.php);}
 				input[type="submit"]:hover {background: #9b66ca;}
 				input[type="submit"]:active {border-top: 2px solid #503473;}
 	
 
 /**************** HEADER *****************/
 
-header {height: 930px; overflow: hidden; position: relative; background: #110b27 url(../images/video_pic.jpg);}
-header .overlay {height: 100%; background: rgba(27, 3, 58, 0.5); position: relative; z-index: 2;}
-		header .overlay .dots {height: 100%; background: url(../images/dots.png);}
+header {height: 980px; overflow: hidden; position: relative; background: #110b27 url(../images/miss_main.png) 100% 20px no-repeat;-webkit-background-size: contain;
+     -o-background-size: contain;
+        background-size: contain;}
+header .overlay {height: 100%; position: relative; z-index: 2;}
+		header .overlay .dots {height: 100%;}
 .video{width: 1980px; height: 1080px; margin: auto; position: absolute; left: 0px; right: 0; top: -150px; background: url(../images/video_pic.jpg) center 150px no-repeat; z-index: 1;}
 	#video {}
 header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0; top: 0; padding-top: 16px;}
 	header .name {font: 600 18px/22px Harmonia; color: #fff; text-transform: uppercase; float: left;}
-		header .name b {display: block; font: 28px/30px Harmonia; color: #97ce5c;}
+		header .name b {display: block; font: 28px/30px Harmonia; color: #fc0000;}
 	header .phone {
 		display: inline-block;
 	    font: 700 34px/32px Harmonia;
@@ -223,9 +241,9 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 	}
 		header .phone:hover {color: #ccc;}
 		header .phone:active {color: #f00;}
-	header .wrapper > [class*="item"] {display: table; width: 30%; height: 120px; color: #fff; text-align: center; text-transform: uppercase; padding: 13px 0; border: 1px solid #fff; float: left; margin: 0 0 13px 13px; position: relative;}
+	header .wrapper > [class*="item"] {display: table; width: 20%; height: 120px; color: #fff; text-align: center; text-transform: uppercase; padding: 13px 0; border: 1px solid #fff; float: left; margin: 0 0 13px 13px; position: relative;}
 	header .wrapper > .item-1 {margin: 0 auto;}
-		header .wrapper > [class*="item"] b {display: block; font: 900 30px/32px Harmonia; color: #97ce5c;}
+		header .wrapper > [class*="item"] b {display: block; font: 900 30px/32px Harmonia; color: #fc0000;}
 		header .wrapper > [class*="item"] .note {font-weight: 600; position: absolute; top: -35px; padding-left: 28px;}
 		header .wrapper > .item-1 .note {left: 0;}
 		header .wrapper > .item-2 .note {left: 16px;}
@@ -261,7 +279,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 	#services .item-7 {background: url(../images/services-7.jpg) no-repeat;}
 	#services .item-8 {background: url(../images/services-8.jpg) no-repeat;}
 	#services [class*="item"]:hover .cell {
-		background: #97ce5c;
+		background: #fc0000;
 		-webkit-transition:all 0.3s ease-out 0;
 		-moz-transition:all 0.3s ease-out 0;
 		-o-transition:all 0.3s ease-out 0;
@@ -294,7 +312,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 			#services [class*="more"] ul li {font: 700 18px/22px Harmonia; text-transform: uppercase; list-style: none; margin-bottom: 10px;}
 			#services [class*="more"] ul li:before {content:'- ';}
 				#services [class*="more"] ul li a {border-bottom: 2px dotted transparent;}
-					#services [class*="more"] ul li a:hover {color: #97ce5c; border-bottom-color: #97ce5c;}
+					#services [class*="more"] ul li a:hover {color: #fc0000; border-bottom-color: #fc0000;}
 				#services [class*="more"] ul li .icon {display: inline-block; width: 18px; height: 18px; background-position: 0 0; margin-left: 7px; top: 3px; cursor: pointer;}
 					#services [class*="more"] ul li .icon .note {display: none; width: 250px; background: #fff; border: 2px solid #97ce5d; position: absolute; top: -10px; right: -260px; font: 16px/20px Harmonia; text-transform: none; padding: 5px 8px; z-index: 5;}
 					#services [class*="more"] ul li:hover .icon .note {display: block;}
@@ -310,13 +328,13 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 #how .wrapper {padding: 120px 0 0;}
 	#how h2 {color: #fff;}
 		#how h2 span:after {background: #fff;}
-	#how [class*="item"] {width: 96px; height: 95px; margin: auto; position: relative;}
+	#how [class*="item"] {width: 100%; height: 95px; margin: auto; position: relative;}
 	#how .item-1 {background-position: 0 -70px;}
 	#how .item-2 {background-position: -97px -70px;}
 	#how .item-3 {background-position: -194px -70px;}
 	#how .item-4 {background-position: -291px -70px;}
-		#how [class*="item"] b {display: table; width: 380px; height: 95px; font: 600 24px/26px Harmonia; color: #fff; text-align: right; position: absolute; left: -400px;}
-		#how [class*="item"] .right {font: 600 18px/22px Harmonia; color: #97ce5c; position: absolute; left: 120px; width: 290px;}
+		#how [class*="item"] b {display: table; width: 100%; height: 95px; font: 600 24px/26px Harmonia; color: #fff; text-align: center; position: absolute;}
+		#how [class*="item"] .right {font: 600 18px/22px Harmonia; color: #fc0000; position: absolute; left: 120px; width: 290px;}
 		#how .item-1 .right {top: 25px;}
 		#how .item-2 .right {top: 5px;}
 		#how .item-3 .right {top: 0;}
@@ -327,9 +345,9 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 					#how [class*="item"] .right ul li a {}
 						#how [class*="item"] .right ul li a:hover {color: #ccc;}
 						#how [class*="item"] .right ul li a:active {color: #f00;}
-					#how [class*="item"] .right ul li .modal_callback, #how [class*="item"] .right ul li .modal_callback:active {color: #97ce5c;}
-						#how [class*="item"] .right ul li .modal_callback:hover {border-bottom: 1px dotted #97ce5c; color: #97ce5c;}
-	#how .arrow {height: 34px; background: url(../images/arrow.png) center top no-repeat; margin: 14px 0;}
+					#how [class*="item"] .right ul li .modal_callback, #how [class*="item"] .right ul li .modal_callback:active {color: #fc0000;}
+						#how [class*="item"] .right ul li .modal_callback:hover {border-bottom: 1px dotted #fc0000; color: #fc0000;}
+	#how .arrow {height: 50px; background: url(../images/arrow.png) center top no-repeat; margin: 14px 0;}
 	#how h4 {color: #fff; text-align: center;}
 
 
@@ -379,7 +397,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 		#examples [class^="more-"] .left_col {width: 725px; float: left;}
 			#examples [class^="more-"] .left_col h3 {font: 700 24px/28px Harmonia; text-align: left; text-transform: uppercase; position: relative; margin-bottom: 20px;}
 			#examples [class^="more-"] .left_col h3:after {content:''; display: block; width: 685px; height: 1px; background: #5d3c8a; position: absolute; left: 0; bottom: -10px;}
-				#examples [class^="more-"] .left_col h3 span {color: #97ce5c;}
+				#examples [class^="more-"] .left_col h3 span {color: #fc0000;}
 			#examples [class^="more-"] .left_col p {margin-bottom: 20px;}
 			#examples [class^="more-"] .left_col b {display: block; font-weight: 700;}
 			#examples [class^="more-"] .left_col ul {margin-bottom: 20px;}
@@ -387,7 +405,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 				#examples [class^="more-"] .left_col ul li:before {content:'- ';}
 			#examples [class^="more-"] .left_col p.strong {font: 24px/28px Harmonia;}
 				#examples [class^="more-"] .left_col p.strong b {display: inline; font: 700 24px/28px Harmonia; text-transform: uppercase;}
-				#examples [class^="more-"] .left_col p.strong b.green {color: #97ce5c; text-transform: none;}
+				#examples [class^="more-"] .left_col p.strong b.green {color: #fc0000; text-transform: none;}
 		#examples [class^="more-"] .right_col {width: 280px; float: right; padding-top: 45px; color: #5d3c8a; text-align: center;}
 			#examples [class^="more-"] .right_col img {display: block; width: 182px; height: 182px; border-radius: 50%; border: 2px solid #5d3c8a; margin: 0 auto 8px; position: relative; behavior:url(/PIE/PIE.php);}
 			#examples [class^="more-"] .right_col b {font-weight: 600; display: block;}
@@ -426,7 +444,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 /**************** BOTTOM FORM *****************/
 
 #bottom_form {height: 555px; background: url(../images/bottom_form_bg.jpg) center bottom no-repeat; position: relative;}
-#bottom_form .wrapper {padding: 155px 0 0;}
+#bottom_form .wrapper {padding: 90px 0 0;}
 	footer {height: 144px; position: absolute; left: 0; bottom: -10px; color: #fff;}
 		footer b {display: inline-block; font: 600 24px/28px Harmonia; text-transform: uppercase; border-bottom: 1px solid #fff; margin-bottom: 6px;}
 		footer .phone {display: inline-block; font-weight: 600;}
@@ -471,7 +489,11 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 			#modal_success h4 b {color: #5d3c8a;}
 		#modal_success p {font: 600 18px/22px Harmonia; color: #111; text-align: center;}
 			#modal_success p b {color: #5d3c8a; display: block;}
-
+.caption2{
+	text-align: left !important;
+	padding-left: 25px;
+	padding-bottom: 20px;
+}
 .judges{
 	width: 100%;
 	text-align: center;
@@ -483,7 +505,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 .judge{
 	display: inline-block;
 	margin-right: 2%;
-	width: 30%;
+	width: 22%;
 }
 .judge p{
 	font-size: 30px;
@@ -491,9 +513,15 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
     font-weight: 600;
     padding: 0 0 15px 0;
 }
-.judge img{
+.photo-img{
 	width: 100%;
+	height: 180px;
     border-radius: 30%;
+	overflow: hidden;
+}
+.photo-img img{
+	width: 100%;
+	height: auto;
 }
 .social-block a{
 	
@@ -570,19 +598,92 @@ iframe{
 }
 
 @media screen and (max-width: 620px){
-header {
-	    height: 1180px;
-	}	
-header .phone{
-	font-size: 16px;
-}
-.caption2{
-	font-size: 32px !important;
-}
+	header {
+		    height: 1180px;
+		}	
+	header .phone{
+		font-size: 16px;
+	}
+	.caption2{
+		font-size: 32px !important;
+	}
+	.contacts {
+	    line-height: 22px;
+	    font-size: 19px;
+	}
+	.contacts img{
+		width: 15px !important;
+	}
+	.name img{
+		width: 90px !important;
+	}
 }
 
 .footer{
 	width: 100%;
 	height: 144px;
 	background: url(../images/footer_bg.jpg);
+}
+#modal_form {
+	width: 60%; 
+	height: auto; /* Рaзмеры дoлжны быть фиксирoвaны */
+	border-radius: 5px;
+	border: 3px #000 solid;
+	background: #110b27 ;
+	position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+	left: 50%; /* пoлoвинa экрaнa слевa */
+	margin-top: -150px;
+	margin-left: -30%; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+	z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	padding: 20px 10px;
+}
+/* Кнoпкa зaкрыть для тех ктo в тaнке) */
+#modal_form #modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+	color: #fff;
+}
+/* Пoдлoжкa */
+#overlay {
+	z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+	position:fixed; /* всегдa перекрывaет весь сaйт */
+	background-color:#000; /* чернaя */
+	opacity:0.8; /* нo немнoгo прoзрaчнa */
+	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%; /* рaзмерoм вo весь экрaн */
+	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	left:0;
+	cursor:pointer;
+	display:none; /* в oбычнoм сoстoянии её нет) */
+}
+#go{
+	display: block;
+	width: 200px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: 600;
+	height: 40px;
+	color: #fff;
+	background: #ff0000;
+}
+.description{
+    width: 60%;
+    color: #fff;
+    padding-bottom: 30px;
+}
+.description h2{
+	    color: #e7b13f;
+    font-size: 60px;
+    margin: 0;
+    padding: 0 0 20px 0;
 }

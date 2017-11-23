@@ -162,7 +162,7 @@ html, body {min-width: 380px;}
 
 	/*------ Headers  ------*/
 	 h2, h3, h4, h5, h6 {text-align: center;}
-	h1 {font: 300 86px/88px Harmonia; color: #333; text-transform: uppercase; margin: 100px auto 60px;}
+	h1 {font: 300 86px/88px Harmonia; color: #fff; text-transform: uppercase; margin: 100px auto 60px;}
 		h1 span {position: relative;}
 		h1 span:after {content:''; display: block; width: 100%; height: 1px; background: #fff; position: absolute; left: 0; bottom: -5px;}
 			h1 span b {font: 700 46px/48px Harmonia; color: #fc0000; position: absolute; top: -40px; right: 0;}
@@ -223,11 +223,12 @@ html, body {min-width: 380px;}
 
 /**************** HEADER *****************/
 
-header {height: 780px; overflow: hidden; position: relative; background: #e4edf8 url(../images/bg-header.png) 0 0px no-repeat;-webkit-background-size: cover;
+header {height: 780px; overflow: hidden; position: relative; background: #110b27 url(../images/bg-header.png) 0 0px no-repeat;-webkit-background-size: cover;
      -o-background-size: cover;
         background-size: cover;}
 header .overlay {height: 100%; position: relative; z-index: 2;}
-		header .overlay .dots {height: 100%;}
+		header .overlay .dots {height: 100%;
+		background: rgba(0,0,0,0.7);}
 .video{width: 1980px; height: 1080px; margin: auto; position: absolute; left: 0px; right: 0; top: -150px; background: url(../images/video_pic.jpg) center 150px no-repeat; z-index: 1;}
 	#video {}
 header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0; top: 0; padding-top: 16px;}
@@ -236,7 +237,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 	header .phone {
 		display: inline-block;
 	    font: 700 34px/32px Harmonia;
-	    color: #000;
+	    color: #fff;
 	    vertical-align: text-bottom;
 	}
 		header .phone:hover {color: #ccc;}
@@ -690,9 +691,8 @@ iframe{
 	background: #ff0000;
 }
 .description{
-	font-weight: 900;
-    color: #000;
     width: 60%;
+    color: #fff;
     padding-bottom: 30px;
 }
 .description h2{

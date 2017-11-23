@@ -18,6 +18,7 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 	
 	<!-- Scripts -->
@@ -314,6 +315,15 @@
 			<b></b>
 		</div>
 	</div>
+	<h2 class="caption4">Претендентки на участие:</h2>
+	<div class="autoplay">
+		<div class="slider-item"><img src="images/photo1.jpeg" alt=""></div>
+		<div class="slider-item"><img src="images/photo2.jpeg" alt=""></div>
+		<div class="slider-item"><img src="images/photo3.jpeg" alt=""></div>
+		<div class="slider-item"><img src="images/photo4.jpeg" alt=""></div>
+		<div class="slider-item"><img src="images/photo5.jpeg" alt=""></div>
+		<div class="slider-item"><img src="images/photo6.jpeg" alt=""></div>
+	</div>
 </div>
 </section>
 
@@ -490,8 +500,10 @@
 </div>
 <!-- Modal Windows End -->
 
-
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="http://hellobrand.ru/unitedsolutions/js/main.js"></script>
+	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/core.js"></script>
 			
 		<script>
 			jQuery('form').each(function(){$(this).append('<textarea name="si_engine" class="si_engine" style="display:none"></textarea>');})
@@ -557,6 +569,16 @@
 	});
     </script>
 </body>
+<script>
+	$('.autoplay').slick({
+		  slidesToShow: 5,
+		  slidesToScroll: 1,
+		  autoplay: true,
+
+		  autoplaySpeed: 2000,
+		});
+
+</script>
 
 <!-- Mirrored from hellobrand.ru/unitedsolutions/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Nov 2017 09:49:36 GMT -->
 </html>

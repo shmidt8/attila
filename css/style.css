@@ -617,6 +617,12 @@ iframe{
 	.name img{
 		width: 90px !important;
 	}
+	.big-caption{
+    font: 300 62px/78px Harmonia;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px auto 39px;
+}
 }
 
 .footer{

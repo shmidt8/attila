@@ -238,7 +238,10 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 	    font: 700 34px/32px Harmonia;
 	    color: #000;
 	    vertical-align: text-bottom;
-	    text-shadow: 4px 4px 2px rgba(61, 61, 61, 1);
+	    text-shadow: -2px 3px 2px rgba(255, 255, 255, 1);
+}
+
+
 	}
 		header .phone:hover {color: #ccc;}
 		header .phone:active {color: #ccc;}

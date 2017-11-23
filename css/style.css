@@ -562,21 +562,21 @@ iframe{
 	header {
 	    height: 920px;
 	}
+	.judge{
+		width: 30%;
+	}
+	.caption4{
+		font-size: 48px;
+	}
 }
 
 @media screen and (max-width: 1050px){
-	
-	#how [class*="item"] b {
-	    width: 300px;
-	    left: -315px;
+	.judge{
+		width: 48%;
 	}
 }
 @media screen and (max-width: 870px){
 	
-	#how [class*="item"] b {
-	    width: 200px;
-	    left: -215px;
-	}
 	.caption{
 		font-size: 45px;
 	}
@@ -591,10 +591,13 @@ iframe{
 	}
 	#services .wrapper {
     padding: 145px 5px 100px;
-}
-.caption3{
-	font-size: 50px;
-}
+	}
+	.caption3{
+		font-size: 50px;
+	}
+	.slider-item{
+		height: 300px;
+	}
 }
 
 @media screen and (max-width: 620px){

@@ -450,7 +450,7 @@ header .wrapper {z-index: 3; margin: auto; position: absolute; left: 0; right: 0
 
 #bottom_form {height: 555px; background: url(../images/bottom_form_bg.jpg) center bottom no-repeat; position: relative;}
 #bottom_form .wrapper {padding: 90px 0 0;}
-	footer {height: 144px; position: absolute; left: 0; bottom: -10px; color: #fff;}
+	footer {height: 144px; position: absolute; left: 0;color: #fff;}
 		footer b {display: inline-block; font: 600 24px/28px Harmonia; text-transform: uppercase; border-bottom: 1px solid #fff; margin-bottom: 6px;}
 		footer .phone {display: inline-block; font-weight: 600;}
 			footer .phone:hover {color: #ccc;}
